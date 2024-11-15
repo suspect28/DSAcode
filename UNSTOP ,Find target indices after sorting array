@@ -1,0 +1,31 @@
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[] A = new int[N];
+
+        // Input array
+        for (int i = 0; i < N; i++) {
+            A[i] = sc.nextInt();
+        }
+
+        int K = sc.nextInt();
+
+        // Sort array
+        Arrays.sort(A);
+
+        // Find indices of K
+        List<Integer> indices = new ArrayList<>();
+        for (int i = 0; i <A.length; i++) {
+            if (A[i] == K) {
+                indices.add(i);
+            }
+        }
+         System.out.println(indices.size());
+        for (int index : indices) {
+            System.out.print(index + " ");
+
+    }
+}
+}
+
