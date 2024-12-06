@@ -1,0 +1,13 @@
+class Solution 
+{ 
+    String sort(String s) 
+    {
+        // code here
+        char[] arr=s.toCharArray();
+        Arrays.sort(arr);
+       
+       String str = new String(arr);
+
+        return str;
+    }
+} 
