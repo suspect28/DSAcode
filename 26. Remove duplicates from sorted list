@@ -1,0 +1,32 @@
+class Solution {
+    // Function to remove duplicates from sorted linked list.
+    Node removeDuplicates(Node head) {
+        // Your code here
+        Node prev=head;
+        Node curr=prev.next;
+        while(curr!=null)
+        {
+        if(curr.data==prev.data)
+        {
+            curr=curr.next;
+            continue;
+            
+            
+        }
+        
+        prev.next=curr;
+        prev=curr;
+        curr=curr.next;
+   }
+        prev.next=null;
+        return head;
+        
+    }
+}
+        
+        
+        
+        
+            
+            
+     
