@@ -1,0 +1,10 @@
+class Solution {
+    public int kthElement(int a[], int b[], int k) {
+        // code here
+        int newarr[]=new int[a.length+b.length];
+        System.arraycopy(a,0,newarr,0,a.length);
+        System.arraycopy(b,0,newarr,a.length,b.length);
+        Arrays.sort(newarr);
+        return newarr[k-1];
+    }
+}
