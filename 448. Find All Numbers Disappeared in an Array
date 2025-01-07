@@ -1,0 +1,26 @@
+class Solution {
+   
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+     int n = nums.length;
+        List<Integer> disappearedNumbers = new ArrayList<>();
+
+        // Mark the presence of each number by negating the value at the corresponding index
+        for (int num : nums) {
+            int index = Math.abs(num) - 1;
+            if (nums[index] > 0) {
+                nums[index] *= -1;
+            }
+        }
+
+        // Find the indices that are still positive, which correspond to the disappeared numbers
+        for (int i = 0; i < n; i++) {
+            if (nums[i] > 0) {
+                disappearedNumbers.add(i + 1);
+            }
+        }
+
+        return disappearedNumbers;
+    }
+
+
+}
