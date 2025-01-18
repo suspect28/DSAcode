@@ -1,0 +1,16 @@
+
+class Solution{
+    String modify(String s){
+        int first=s.charAt(0);
+        if(first>=97)
+        {
+             s=s.toLowerCase();
+        }
+        else
+        {
+            s=s.toUpperCase();
+        }
+        return s;
+        
+    }
+}
