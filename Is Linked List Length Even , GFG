@@ -1,0 +1,15 @@
+class Solution {
+    public boolean isLengthEven(Node head) {
+        // code here
+        Node temp=head;
+        int count=0;
+        while(temp!=null)
+        {
+            count+=1;
+            temp=temp.next;
+        }
+        return count%2==0;
+        
+        
+    }
+}
