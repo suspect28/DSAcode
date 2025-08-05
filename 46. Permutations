@@ -1,0 +1,46 @@
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+        List<List<Integer>>res=new ArrayList<>();
+        variations(nums,res,0);
+
+        return res;
+
+        
+        
+    }
+    public void  variations(int[] nums,List<List<Integer>> res,int idx)
+    {
+        List<Integer>sublist=new ArrayList<Integer>();
+        if(nums.length==idx)
+        {
+           
+          for(int nu:nums)
+          {
+            sublist.add(nu);
+          }
+           res.add(sublist);
+           return ;
+
+
+
+
+        }
+        for(int i=idx;i<nums.length;i++)
+        {
+            swap(nums,idx,i);
+            variations(nums,res,idx+1);
+             swap(nums,idx,i);//backtracking
+
+
+
+        }
+       
+    }
+    public void swap(int[]nums,int i,int i2)
+    {
+        int temp=nums[i];
+        nums[i]=nums[i2];
+       nums[i2]=temp;
+
+    }
+}
